@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ student["English Name "] }} - Smart E-Card</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="card">
+        <!-- <img src="{{ student['PhotoURL'] }}" alt="Student Photo"> -->
+        <h2><strong>English Name:</strong> {{ student["English Name "] }}</h2>
+        <p><strong>Burmese Name:</strong> {{ student["Burmese Name"] }}</p>
+        <p><strong>Student ID:</strong> {{ student["StudentID"] }}</p>
+        <p><strong>Class:</strong> {{ student["Class"] }}</p>
+        <p><strong>Father:</strong> {{ student["Father "] }}</p>
+        <p><strong>Mother:</strong> {{ student["Mother"] }}</p>
+        <p><strong>Address:</strong> {{ student["Address"] }}</p>
+        <p><strong>Contact:</strong> {{ student["Contact"] }}</p>
+    </div>
+</body>
+</html>
