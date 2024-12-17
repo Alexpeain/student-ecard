@@ -17,11 +17,15 @@ SPREADSHEET_URL = os.getenv("SPREADSHEET_URL")
 # Authenticate with Google Sheets API
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/spreadsheets"]
 creds = ServiceAccountCredentials.from_json_keyfile_name(GOOGLE_APPLICATION_CREDENTIALS, scope)
-client = gspread.authorize(creds)
+
+try:
+    client = gspread.authorize(creds)
 
 # Open the Google Sheet and access the specific worksheet
-sheet = client.open_by_url(SPREADSHEET_URL)
-student_sheet = sheet.worksheet("StudentInfo")
+    sheet = client.open_by_url(SPREADSHEET_URL)
+    student_sheet = sheet.worksheet("StudentInfo")
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 # Fetch all student data from Google Sheets
 def fetch_student_data():
